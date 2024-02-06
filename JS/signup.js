@@ -23,7 +23,7 @@ const authenticate = firebaseConfig
 const database = firebaseConfig
 
 
-function createUser(){
+function signUp(){
   let userName=document.getElementById("name").value
 let email=document.getElementById("email").value
 let passWord=document.getElementById("password").value
@@ -34,6 +34,7 @@ let phone=document.getElementById("phone").value
 let street=document.getElementById("street").value
 let postalCode=document.getElementById("postalCode").value
 let dob=document.getElementById("dob").value
+let signUp=document.getElementById("signUp")
 
 firebase.database().ref('users/' + user.uid).set({
              username: username,
