@@ -1,7 +1,8 @@
-import {initializeApp} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import {initializeApp} from "https://esm.sh/firebase/app";
 //import {Auth} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import {getDatabase} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js'
+import {getDatabase} from "https://esm.sh/firebase/app"
 
+//import firebase from "firebase/app"
 //const appSettings = 'https://kcb-lms-default-rtdb.firebaseio.com/'
 
 const firebaseConfig = {
