@@ -1,5 +1,5 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import {getAuth, createUserWithEmailAndPassword} from "firebase/auth/";
+//import {Auth} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import {getDatabase} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js'
 
 //const appSettings = 'https://kcb-lms-default-rtdb.firebaseio.com/'
@@ -14,29 +14,54 @@ const firebaseConfig = {
 };
 const app= initializeApp(firebaseConfig)
 
+
+
 // to be used anywhere for authentication
-export const auth= getAuth()
+//export const auth= getAuth(app)
 
-const authenticate = firebase.auth()
-const database = firebase.Database()
+const authenticate = firebaseConfig
+const database = firebaseConfig
 
 
-let userName=document.getElementById("name")
-let email=document.getElementById("email")
-let passWord=document.getElementById("password")
+function createUser(){
+  let userName=document.getElementById("name").value
+let email=document.getElementById("email").value
+let passWord=document.getElementById("password").value
 //UserId=document.getElementById("idN")
-let country=document.getElementById("country")
-let idNumber= document.getElementById("idNumber")
-let phone=document.getElementById("phone")
-let street=document.getElementById("street")
-let postalCode=document.getElementById("postalCode")
-let dob=document.getElementById("dob")
+let country=document.getElementById("country").value
+let idNumber= document.getElementById("idNumber").value
+let phone=document.getElementById("phone").value
+let street=document.getElementById("street").value
+let postalCode=document.getElementById("postalCode").value
+let dob=document.getElementById("dob").value
+
+firebase.database().ref('users/' + user.uid).set({
+             username: username,
+              dob: dob,
+                phone: phone,
+                idNumber: idNumber,
+                 country: country,
+                street: street,
+                postalCode: postalCode
+            });
+              console.log('User created successfully:', user);
+            alert('User created successfully!')
+          
+            .catch(function(err) {
+              var errorCode = err.code;
+              var errorMessage = err.message;
+              console.log(errorMessage);
+        
+           })
+          }
 
 
-let signupBtn = document.getElementById("signupBtn");
+
+/*let signupBtn = document.getElementById("signupBtn");
 //let signinBtn = document.getElementById("signinBtn");
 let nameField = document.getElementById("nameField");
 let title = document.getElementById("title");
+
 
 window.signUp=function(e){
   e.preventDefault();
@@ -56,13 +81,9 @@ window.signUp=function(e){
   .then(function(user) {
       console.log(user.uid);
     })
-    .catch(function(err) {
-       var errorCode = err.code;
-       var errorMessage = err.message;
-       console.log(errorMessage);
- 
-    })
+    
 }
+*/
 
 
 
