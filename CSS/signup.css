@@ -20,14 +20,15 @@ position: relative;
 width: 90%;
 max-width: 450px;
 position: absolute;
-top: 10px;
+top: 50%;
 left: 45%;
 transform: translate(-50%, -50%);
 text-align: center;
 padding: 20px 20px 40px;
 background: white;
 color: rgb(255, 255, 255);
-border: 2px solid goldenrod ;
+border: 2px solid rgb(61, 211, 106) ;
+height: auto;
 
 }
 .box-form h1{
