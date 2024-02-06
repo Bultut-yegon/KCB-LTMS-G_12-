@@ -28,7 +28,9 @@ padding: 20px 20px 40px;
 background: white;
 color: rgb(255, 255, 255);
 border: 2px solid rgb(61, 211, 106) ;
-height: auto;
+height:90vh;
+max-height: fit-content;
+
 
 }
 .box-form h1{
@@ -51,7 +53,7 @@ left: 50%;
 }
 .input-field{
 margin: 15px 0;
-background: gold;
+background: rgb(145, 149, 207);
 display: flex;
 border-radius: 3px;
 align-items: center;

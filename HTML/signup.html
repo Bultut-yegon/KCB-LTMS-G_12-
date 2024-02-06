@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="us">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <title>KCB</title>
     <link rel="stylesheet" href="../CSS/signup.css" />
@@ -14,7 +14,7 @@
     <div class="container">
       <div class="box-form">
         <h1 id="title">Sign up</h1>
-        <form>
+        <form onsubmit="signup(event)" method="post">
           <div class="input-group">
             <div class="input-field" id="name">
               <i class="fa-solid fa-user"></i>
@@ -70,6 +70,6 @@
         </form>
       </div>
     </div>
-    <script src="../JS/singup.js" type="module"></script>
+    <script src="../JS/signup.js" type="module"></script>
   </body>
 </html>
