@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref } from "firebase/database";
+import { getDatabase, ref,push } from "firebase/database";
 
 //import firebase from "firebase/app"
 //const appSettings = 'https://kcb-lms-default-rtdb.firebaseio.com/'
@@ -38,7 +38,7 @@ const phone=document.getElementById("phone").value
 const street=document.getElementById("street").value
 const postalCode=document.getElementById("postalCode").value
 const dob=document.getElementById("dob").value
-const signUp=document.getElementById("signUp")
+//const signUp=document.getElementById("signUp")
 
 //firebase.database().ref('users/' + user.uid).set({
  const newUser={userName,
