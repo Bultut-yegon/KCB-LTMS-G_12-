@@ -1,6 +1,5 @@
-import {initializeApp} from "https://esm.sh/firebase/app";
-//import {Auth} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import {getDatabase} from "https://esm.sh/firebase/app"
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref } from "firebase/database";
 
 //import firebase from "firebase/app"
 //const appSettings = 'https://kcb-lms-default-rtdb.firebaseio.com/'
@@ -21,32 +20,52 @@ const app= initializeApp(firebaseConfig)
 //export const auth= getAuth(app)
 
 const authenticate = firebaseConfig
-const database = firebaseConfig
+const database = getDatabase(app)
+const usersRef = ref(database, "users");
+
+const form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
 
-function signUp(){
-  let userName=document.getElementById("name").value
-let email=document.getElementById("email").value
-let passWord=document.getElementById("password").value
-//UserId=document.getElementById("idN")
-let country=document.getElementById("country").value
-let idNumber= document.getElementById("idNumber").value
-let phone=document.getElementById("phone").value
-let street=document.getElementById("street").value
-let postalCode=document.getElementById("postalCode").value
-let dob=document.getElementById("dob").value
-let signUp=document.getElementById("signUp")
+const userName=document.getElementById("name").value
+const email=document.getElementById("email").value
+const passWord=document.getElementById("password").value
+//const userId=document.getElementById("idNumber")
+const country=document.getElementById("country").value
+const idNumber= document.getElementById("idNumber").value
+const phone=document.getElementById("phone").value
+const street=document.getElementById("street").value
+const postalCode=document.getElementById("postalCode").value
+const dob=document.getElementById("dob").value
+const signUp=document.getElementById("signUp")
 
-firebase.database().ref('users/' + user.uid).set({
-             username: username,
-              dob: dob,
-                phone: phone,
-                idNumber: idNumber,
-                 country: country,
-                street: street,
-                postalCode: postalCode
-            });
-              console.log('User created successfully:', user);
+//firebase.database().ref('users/' + user.uid).set({
+ const newUser={userName,
+              dob,
+              phone,
+              idNumber,
+             country,
+             street,
+             postalCode,
+            email,
+           passWord,
+           
+           };
+  usersRef.push(newUser)
+    .then(() => {
+      // Success handling
+      form.reset();
+      alert("User created successfully!");
+    })
+    .catch((error) => {
+      // Error handling
+      console.error(error);
+      alert("Error creating user: " + error.message);
+    });
+});
+           
+        /*      console.log('User created successfully:', user);
             alert('User created successfully!')
           
             .catch(function(err) {
@@ -56,7 +75,7 @@ firebase.database().ref('users/' + user.uid).set({
         
            })
           }
-
+*/
 
 
 /*let signupBtn = document.getElementById("signupBtn");

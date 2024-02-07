@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>KCB</title>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-database-compat.js"></script>
     <link rel="stylesheet" href="../CSS/signup.css" />
     <script
       src="https://kit.fontawesome.com/8c8b19eb92.js"
@@ -15,7 +17,7 @@
     <div class="container">
       <div class="box-form">
         <h1 id="title">Sign up</h1>
-        <form onsubmit="signup(event)" method="post">
+        <form action="#" method="post">
           <div class="input-group">
             <div class="input-field" id="name">
               <i class="fa-solid fa-user"></i>
@@ -59,11 +61,11 @@
             <p>Have an account already? <a href="#">Sign In</a></p>
           </div>
           <div class="btn">
-            <button type="button" onclick="signup" id="signUp">sign up</button>
+            <button type="submit" onclick="signup" id="signUp">sign up</button>
           </div>
         </form>
       </div>
     </div>
-    <script src="../JS/signup.js" type="module"></script>
+    <script type="module" src="/JS/signup.js"></script>
   </body>
 </html>
